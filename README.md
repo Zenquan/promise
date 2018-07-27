@@ -188,7 +188,7 @@ module.exports = Promise;
 ```
 ##### 测试
 ```JavaScript
-git clone xxx
+git clone https://github.com/Zenquan/promise.git
 cd promise
 npm install
 promises-aplus-tests promiseES6.js
