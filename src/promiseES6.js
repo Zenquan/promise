@@ -189,4 +189,4 @@ Promise.defer = Promise.deferred = function () {
   return dfd;
 }
 //module.exports = Promise;//commonJS写法
-//export default Promise; ES6写法
+export default Promise; //ES6写法

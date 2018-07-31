@@ -1,37 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
     <script src="../src/jquery.min.js"></script>
     <script>
-        let promise = function() {
-            return new Promise((reslove, reject)=>{
+        let promise = function () {
+            return new Promise((reslove, reject) => {
                 $.ajax({
-                    url: 'http: //happymmall.com/user/get_user_info.do',
+                    url: 'http://happymmall.com/user/get_user_info.do',
                     dataType: 'json',
-                    type: 'get',
-                    success(res){
+                    type: 'post',
+                    success(res) {
                         reslove(res);
                     },
-                    error(err){
+                    error(err) {
                         reject(err);
                     }
                 })
             })
-        }   
+        }
         let p1 = new promise();
         let p2 = new promise();
         Promise.all([p1, p2]).then((result) => {
             let [p1, p2] = result;
-            console.log(p1, p2);
+            console.log('success: ' + p1 + p2);
         }).catch((err) => {
-            console.log(err);
+            console.log('error: ' + err);
         });
     </script>
 </body>
+
 </html>
